@@ -32,7 +32,7 @@ app.get('/',function(req,res){
             return;
         }
         // console.log('todo list',todo);
-        return res.render('home',{
+        return res.render('index',{
             title:"My To Do List",
             todo_list: todo
         });
