@@ -1,0 +1,179 @@
+/* style add to body */
+body{
+    margin: 0;
+    background-color:rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+    min-width: 400px;
+}
+/* cointaner style */
+.cointaner{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    margin-top: 40px;
+    padding: 10px;
+    border-radius: 15px;
+    background-image:linear-gradient(183deg,blue,purple);
+    box-shadow: -6px 5px 14px -2px;
+}
+/* h1 tag text style */
+h1{
+    text-align: center;
+}
+/* description style */
+.description{
+    position: relative;
+    top:-20px;
+    width: 100%;
+    height: 5%;
+    text-align: start;
+    padding: 0px;
+    padding-left: 20px;
+
+}
+.description > h3{
+    height: 0%;
+}
+.description > input{
+    height: 100%;
+    width: 95%;
+    background-color: transparent;
+    color: white;
+    border: none;
+    outline: none;
+}
+/* catagory and date box style */
+.catagory-date{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding-left: 10px;
+    text-align: start;
+    
+}
+
+.category{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.category > select{
+    width: 90%;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+option{
+    background-color: #8a2be2;
+    color: white;
+}
+.date{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 48%;
+    text-align: start;
+}
+
+.date > input{
+    width: 90%;
+    outline: none;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+/* add button style */
+.add-button > button{
+    background-color: black;
+    color: white;
+    padding: 15px;
+    border-radius: 18px
+}
+/* delete button style */
+.delete-button > button{
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 18px
+
+}
+/* ul tag style*/
+ul{
+    list-style: none;  
+}
+/* li tag style */
+li{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    justify-items: center;
+    flex-direction: row;
+    background-image: linear-gradient(93deg,blue,purple);
+}
+ul li:hover {
+    background: #0dc70d;
+}
+.catagory-type{
+    display: flex;
+    justify-content: space-between;
+    margin-left: -40px;
+
+}
+.catagory-type input:checked + .catagory-item > label {
+    text-decoration: line-through;
+    color: red;
+}
+.catagory-item{
+    display: flex;
+    flex-direction: column;
+}
+
+.list-catagory{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 30px;
+    color: white;
+}
+/* add color for diffrent catgory color */
+.School{
+    background-color: orange ;
+}
+.Work{
+    background-color:rgb(146, 0, 134);
+}
+.Personal{
+    background-color: rgb(1, 1, 105);
+}
+.Cleaning{
+    background-color: #1e3be9;
+}
+.Others{
+    background-color:maroon
+}
+
+/* add media quary */
+@media only screen and (max-width: 800px) {
+    .cointaner{
+        width: 80%;
+    }
+  }
+
+@media only screen and (max-width: 600px) {
+    .cointaner{
+        width: 90%;
+    }
+  }
+@media only screen and (max-width: 400px) {
+    .cointaner{
+        width: 100%;
+    }
+  }

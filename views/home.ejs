@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <link rel="icon" type="image/x-icon" href="/image/favicon.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <body>
+        <div class="cointaner">
+            <div >
+                <h1> To Do App</h1>
+            <hr>
+            <form id="from" action="/create-to-do" method="post">
+                <div class="description">
+                    <h3>DESCRIPTION</h3>
+                    <input name="description" type="text" placeholder="What you need to do?" required>
+                </div>
+                <hr>
+                <div class="catagory-date">
+                    <div class="category">
+                        <label for="category">CATEGORY</label>
+                        <select name="category" id="category">
+                            <option value="Chose" disabled selected>Chose a Category</option>
+                            <option value="Personal">Personal</option>
+                            <option value="Work">Work</option>
+                            <option value="School">School</option>
+                            <option value="Cleaning">Cleaning</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+                    <div class="date">
+                        <label for="date">DUE DATE</label>
+                        <input type="date" name="date" id="date" required>
+                    </div>
+                    
+                </div>
+                <hr>
+                    <span class="add-button">
+                        <button type="submit" value="add-task"><i class="fa-solid fa-plus"></i> Add Task</button>
+                    </span>
+            </form>
+            <form action="/delete-to-do" method="post">
+                <span class="delete-button" value="delete-task">
+                    <button type="submit">
+                        <i class="fa-solid fa-trash-can"></i>
+                        Delete Task
+                    </button>
+                    <hr>
+                </span>
+                <div>
+                    <ul class="list_item">
+                        <% for(let i of todo_list) {%>
+                        <li id="<%= i._id %>">
+                            <div class="catagory-type">
+                                <input id="check" type="checkbox" name="todo" value="<%= i._id %>">
+                                <div class="catagory-item">
+                                    <label class="list-description" for="task1">&nbsp&nbsp&nbsp&nbsp<%= i.description %></label>
+                                    <label for="date">&nbsp&nbsp&nbsp&nbsp<i class="fa-solid fa-calendar-days"></i>&nbsp&nbsp<%= i.date %></label>
+                                </div>
+                            </div>
+                            <div class="list-catagory <%= i.category %>">
+                                <%= i.category %>
+                            </div>
+                          </li>
+                          <hr>
+                          <%}%>
+                    </ul>
+                </div>
+            </form>
+            
+    
+            </div>
+        </div>
+        
+    </body>
+</html>
